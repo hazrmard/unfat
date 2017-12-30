@@ -28,13 +28,10 @@
 %  
 %  Output: The 'before' image transformed to look like the 'after' image.
 
-% sfile = input('Enter source image file name: ', 's');
-% tfile = input('Enter target image file name: ', 's');
-% method = imput('Enter method (1: polynomial, 2: spline): ');
-% default arguments
-sfile = 'imgs/1a.jpg';  % before
-tfile = 'imgs/1b.jpg';  % after
-method = 1;
+sfile = input('Enter source image file name: ', 's');
+tfile = input('Enter target image file name: ', 's');
+method = imput('Enter method (1: polynomial, 2: spline): ');
+
 source = rgb2gray(imread(sfile));
 target = rgb2gray(imread(tfile));
 
@@ -42,7 +39,7 @@ target = rgb2gray(imread(tfile));
 opengl('save', 'software');
 
 % if cached==true, then load previously saved point sets
-cached = true;
+cached = false;
 cachefile = 'cache.mat';
 
 subplot(2,2,1); imshow(source); hold on;
